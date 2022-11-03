@@ -1,0 +1,23 @@
+{
+  "name": "populatecollection",
+  "version": "1.0.0",
+  "description": "Populate mongo db collection auxiliary tool",
+  "main": "app.js",
+  "dependencies": {
+    "mongodb": "^4.11.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.11.9"
+  },
+  "scripts": {
+    "mongo-populate": "node ./deploy/app.js"
+  },
+  "author": "Mateusz Czyzewski",
+  "license": "MIT",
+  "keywords": [
+    "mongodb",
+    "populating"
+  ]
+}
