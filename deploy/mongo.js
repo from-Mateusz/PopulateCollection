@@ -39,18 +39,12 @@ class MongoDatabaseConnectionFactory {
 }
 class MongoCollectionHost {
     async feed() {
-        // this.checkIfCollectionIsKnown(args.coll);
-        // const dbConnection = await this.doDatabaseConnection();
-        // const _feed = await this.readFeed()
-        // this.checkIfFeedContainsMentionedCollection(_feed, args.coll);
-        // dbConnection.database.collection(args.coll).insertMany(_feed[args.coll]);
         if (args.idType) {
             const idRandomizer = IdRandomizerFactory.randomizer(args.idType);
             const uniqueIds = idRandomizer.randomize([10, 20], 10);
             console.log("Unique ids are:", uniqueIds);
         }
         if (args.randomize) {
-            console.log("Inserting documents with random ids");
             this.feedRandomized();
         }
         return;

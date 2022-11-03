@@ -2,7 +2,6 @@ import { Db, MongoClient } from "mongodb";
 import { existsSync, readFileSync } from "fs"
 import ArgumentResolver from "./arguments-resolver";
 import StdinJsonReader from "./stdin-json-reader";
-import { ObjectType } from "typescript";
 
 
 type MongoDatabaseConnectionWrapper = {
@@ -50,11 +49,6 @@ class MongoDatabaseConnectionFactory {
 class MongoCollectionHost {
     
     async feed() {
-        // this.checkIfCollectionIsKnown(args.coll);
-        // const dbConnection = await this.doDatabaseConnection();
-        // const _feed = await this.readFeed()
-        // this.checkIfFeedContainsMentionedCollection(_feed, args.coll);
-        // dbConnection.database.collection(args.coll).insertMany(_feed[args.coll]);
         if(args.idType) {
             const idRandomizer = IdRandomizerFactory.randomizer(args.idType);
             const uniqueIds = idRandomizer.randomize([10, 20], 10);
